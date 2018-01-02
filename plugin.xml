@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="plugin.orientation" version="0.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>Orientation</name>
+    <DESCRIPTION>Enable lanscape mode when viewing piano page only</DESCRIPTION>
+
+    <js-module name="Orientation" src="www/orientation.js">
+        <clobbers target="orientationPlugin" />
+    </js-module>
+
+    <platform name="ios">
+      <config-file target="config.xml" parent="/*">
+        <feature name="Orientation">
+          <param name="ios-package" value="Orientation" />
+        </feature>
+      </config-file>
+      <header-file src="src/ios/Orientation.h" />
+      <source-file src="src/ios/Orientation.m" />
+
+    </platform>
+</plugin>
+
